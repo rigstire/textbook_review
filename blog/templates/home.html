@@ -1,10 +1,7 @@
-{% load static %}
+{% extends 'base.html' %}
 <html>
 <head>
 <title>Textbook Review!</title>
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
-rel="stylesheet">
-<link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
 <div class="nav-left">
     <h1><a href="{% url 'home' %}">Textbook Review</a></h1>
@@ -13,6 +10,7 @@ rel="stylesheet">
     <a href="{% url 'post_new' %}">+ Add New Review</a>
     </div>
 {% block content %}
+{% block title %} Reviews{% endblock title %}
 {% for post in object_list %}
 <body>
 <div>
